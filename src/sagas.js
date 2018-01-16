@@ -4,10 +4,11 @@ import { REQUEST_API_DATA, receiveApiData } from "./actions";
 import { fetchData } from "./api";
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
-function* getApiData(action) {
+function *getApiData(action) {
   try {
     // do api call
     const data = yield call(fetchData);
+    //console.log(data);
     yield put(receiveApiData(data));
   } catch (e) {
     console.log(e);
@@ -21,6 +22,6 @@ function* getApiData(action) {
   dispatched while a fetch is already pending, that pending fetch is cancelled
   and only the latest one will be run.
 */
-export default function* mySaga() {
+export default function *mySaga() {
   yield takeLatest(REQUEST_API_DATA, getApiData);
 }

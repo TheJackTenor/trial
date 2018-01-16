@@ -5,7 +5,7 @@ export const fetchData = async () => {
       const data = await response.json();
 
       //THE JSON IS STILL CORRECT HERE
-      console.log(data);
+      //console.log(data);
       return data;
     } catch (e) {
       console.log(e);
