@@ -1,7 +1,8 @@
 {
-  "name": "first-app3",
+  "name": "trial",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://thejacktenor.github.io/trial",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -11,9 +12,14 @@
     "redux-saga": "^0.16.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }
